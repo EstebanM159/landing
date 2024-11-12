@@ -1,0 +1,53 @@
+---
+import Card from '../components/Card.astro';
+const cardsInfo = [
+    {
+        body:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat excepturi ad sint ipsum nemo ipsam dolores minima similique ',
+        title:'Seo / Sem',
+        href:'#',
+        img:'search.svg',
+        color:'bg-yellow-400'
+    },
+    {
+        body:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat excepturi ad sint ipsum nemo ipsam dolores minima similique ',
+        title:'Marketing',
+        href:'#',
+        img:'speakerphone.svg',
+        color:'bg-emerald-600'
+    },
+    {
+        body:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat excepturi ad sint ipsum nemo ipsam dolores minima similique ',
+        title:'Viral Campaign',
+        href:'#',
+        img:'trending.svg',
+        color:'bg-orange-600'
+    },{
+        body:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat excepturi ad sint ipsum nemo ipsam dolores minima similique ',
+        title:'Others',
+        href:'#',
+        img:'other.svg',
+        color:'bg-purple-600 '
+    }
+
+]
+---
+<section id="services" class=" max-w-6xl mx-auto flex flex-col gap-5 mt-8 px-4 items-center justify-center md:gap-10 md:mt-14 md:py-14">
+    <div class="md:min-w-80 flex flex-col gap-3">
+        <h1 class="text-slate-950 text-3xl sm:text-4xl md:text-5xl">We provide the best services</h1>
+        <h3 class="text-slate-600 text-base">Let us unleash the full potential of your business with our data-driven strategies</h3>
+    </div>
+    <ul class="flex flex-col items-center justify-around gap-6 sm:grid sm:grid-cols-2 lg:flex-row lg:flex">
+       {
+        cardsInfo.map(card=>
+            {
+            const {body, title, href, img,color} = card
+                return (
+                <li class="link-card list-none  md:max-w-96 drop-shadow-md bg-white rounded-md ">
+                  <Card body={body} title={title} href={href} img={img} color={color} />
+                </li>
+                )
+            }
+        )
+       }
+    </ul>
+</section>

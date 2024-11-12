@@ -1,0 +1,32 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+	img:string;
+	color:string;
+}
+
+const { href, title, body,img,color } = Astro.props;
+---
+
+
+	<a href={href} class="w-full">
+		<header class="flex justify-between items-center">
+			<div class=`${color} w-1/3 h-10 flex items-center justify-center  card-header` >
+				<img src={`/${img}`} alt={title}>
+			</div>
+			<h4 class="w-1/2 mt-2 font-semibold text-nowrap">
+				{title}
+			</h4>
+		</header>
+		<p class="text-sm mx-5 my-2 text-slate-800">
+			{body}
+		</p>
+	</a>
+<style>
+	.card-header{		
+  		border-bottom-right-radius: 91px 81px;
+		border-bottom-left-radius: 80px 17px;
+	}
+</style>

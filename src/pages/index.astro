@@ -1,0 +1,32 @@
+---
+import AboutSection from '../components/AboutSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to BrandBuzz.">
+
+	<HeroSection/>
+	<div class="hidden px-4 ml-10 max-w-6xl sm:mx-auto  md:flex md:items-center mt-8 gap-5 ">
+		<a href="/prueba" class="rounded-full shadow-md p-2 hover:shadow-violet-500">
+			<img src="/arrow-down.svg" class="size-8" alt="aa">
+		</a>
+		<p class="font-bold">Explore More</p>
+	</div>
+	<ServicesSection/>
+		
+	<ContactSection/>
+	<AboutSection/>
+</Layout>
+
+<script>
+        // JavaScript para mostrar/ocultar el menú móvil
+        const menuBtn = document.getElementById('menu-btn')!;
+        const mobileMenu = document.getElementById('mobile-menu')!;
+		const toggleMenu = false
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('top-16');
+        });
+    </script>
